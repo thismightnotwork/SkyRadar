@@ -1,0 +1,65 @@
+
+== CONFIG/bg ==
+
+In this directory, you may add images to display in the background of radar
+screens or loose strip bays, sorting them in subdirectories as desired.
+
+Background images come in two flavours:
+ - pixmap file: regular image file (e.g. PNG) import with possible transparency;
+ - text drawing: text file containing drawing specifications (only for radars).
+
+To make an image selectable at an airport or CTR location, say with code XYZ,
+it must be listed in a menu file named "XYZ.lst" placed here. Menu files can
+contain any number of images, and images can appear in multiple menu files.
+
+Menu (.lst) and text drawing file formats are described in the sections below.
+Both file types allow line comments after a '#' character.
+
+
+*** MENU FILES ***
+
+Spec lines in menu files take either of the following forms:
+ path/to/pixmap.png         NW:SE        Title shown in radar scope menu
+ path/to/text-drawing-file  DRAW         Title shown in radar scope menu
+ path/to/pixmap.png         LOOSE scale  Title shown in loose strip bay menu
+
+where:
+ - file paths are all relative to this directory and must not contain spaces;
+ - NW and SE are the North-West and South-East corners for the imported pixmap
+   on the radar (see syntax for point specification in the quick reference);
+ - "DRAW" is a fixed token, indicating that the file is a text drawing file,
+   formatted as described below;
+ - "LOOSE" is a fixed token, indicating that the pixmap is for loose strip bays;
+ - scale is a multiplying factor for the image width, where 1 corresponds to the
+   width of a full-size strip drawn in the bay.
+
+Pixmap images stretch or shrink to meet their specified scale or corners. On
+radars, you can start with approximate corners and later adjust them manually
+using the positioning helper tool available from the application system menu.
+
+
+*** TEXT DRAWINGS ***
+
+A text drawing spec file contains a number of drawing sections separated by at
+least one empty line. Each one is of the form:
+colour
+point1  [text label for point]
+ [:label  text label for connecting line]
+point2  [text label for point]
+...
+
+where:
+ - colour is an SVG colour keyword name like "white" or an "RRGGBB" hex spec;
+ - points follow the "point specification" syntax given in the quick reference;
+ - text labels on lines and points are all optional and may contain spaces.
+
+If a drawing section only contains one point under the colour spec line, a mark
+will be drawn to make the single point visible. More points in the section will
+result in a broken line path between the listed points.
+
+If you have sector files such as those used in Euroscope or IvAc, you should
+try the integrated "extract from sector file" system tool to convert their
+contents into ATC-pie native drawings. You will certainly have to refactor the
+resulting files, but you save yourself the trouble of drawing everything
+yourself and translating between coordinate formats.
+

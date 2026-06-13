@@ -1,0 +1,69 @@
+
+== CONFIG/nav ==
+
+In this directory, you may deposit six different spec files. Items 1, 2 and 3
+are typically files copied from AIRAC data sources. Just make sure you choose
+the right format and name them appropriately.
+
+
+1. "navaid.dat"
+
+This file provides the source data for world navaids (VOR, NDB, LOC...). It
+should follow the X-plane NAV format, preferably version 11.
+
+If missing, ATC-pie will fall back on an old data cycle, very much out of date.
+
+
+2. "fix.dat"
+
+This file provides the source data for world fixes and RNAV points. It should
+follow the X-plane FIX format, preferably version 11.
+
+If missing, ATC-pie will fall back on an old data cycle, very much out of date.
+
+
+3. "awy.dat"
+
+This file provides the source data for world airways. It should follow the
+X-plane AWY format, preferably version 11.
+
+If missing, ATC-pie will fall back on an old data cycle, very much out of date.
+
+
+4. "AD-positions"
+
+This file provides a world-wide list of airfield names and positions. It should
+specify one per line and end with a line containing a single integer count of
+all entries. Each AD spec line follows the format:
+  ICAO  lat,lon  Airfield long name
+
+Line comments, starting with '#', are allowed.
+
+If missing, ATC-pie will fall back on a list extracted from old data on first
+run, and saved to "OUTPUT/AD-positions.extract" in the right format. You can
+move the file here, removing its extension, and edit it to update the list.
+
+
+5. "AD-entry-exit"
+
+This file specifies entry and exit points for airports, connecting them to the
+world airway network. They enable quick route suggestions between origin and
+destination airfields on strip and FPL detail sheets. Each line is of either
+following format, "entry" and "exit" being fixed tokens (verbatim):
+  ICAO_DEP exit  navpoint  [optional leg spec before navpoint, e.g. "SID"]
+  ICAO_ARR entry navpoint  [optional leg spec after navpoint, e.g. "STAR"]
+
+Line comments, starting with '#', are allowed.
+
+
+6. "route-presets"
+
+This file specifies route presets for origin-destination airport pairs. They
+allow for easy recall on strip and FPL sheets. Using white space as the first
+two separators, each line is of the form:
+  ICAO_1 ICAO_2  route saved from origin ICAO_1 to destination ICAO_2
+
+Line comments, starting with '#', are allowed.
+
+Route presets saved during sessions are appended to this file.
+

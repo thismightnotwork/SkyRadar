@@ -1,0 +1,64 @@
+
+== CONFIG/acft ==
+
+This directory contains four editable text files, all allowing line comments
+(starting with '#') anywhere in the file.
+
+
+1. "acft-db"
+
+This file lists aircraft designators with associated info on the aircraft type.
+Each line is made of 4 whitespace-separated values:
+ - aircraft type designator, e.g. "C172"
+ - X-plane category, i.e. "props", "turboprops", "heavy", "jets" or "helos"
+ - wake turbulence category, i.e. "L", "M", "H" or "J"
+ - typical cruise speed (integer value in knots)
+
+Except for the type designator, a value can be replaced with a "-" to signify an
+unknown or non-applicable value.
+
+
+2. "tail-numbers"
+
+This file specifies aircraft registration number formats, a.k.a. "tail numbers",
+used to randomise non-commercial callsigns for solo and teacher traffic.
+
+Each non-empty spec line in this file contains a possible callsign template in
+which:
+ - every "@" character is replaced with a random letter (A-Z);
+ - every "%" character is replaced with a random decimal number digit (0-9);
+ - every "*" character is replaced with either a letter or a digit;
+ - every other character is copied verbatim.
+
+For example, line "X-%%@@" (without the quotes) will generate callsigns made of
+a "X-" prefix followed by two number digits and two letters.
+
+
+3. "fgfs2icao"
+
+ATC-pie looks in this file to find ICAO aircraft type designators for the
+connected models in FlightGear sessions. Each contained spec line must start
+with a regular expression matching the model strings to recognise, and end with
+a whitespace-separated token that is either:
+ - a type designator to recognise an aircraft, e.g. "C172";
+ - or the 4-character token ":ATC" to recognise an ATC client (NB: no need to
+   specify a regexp for ATC-pie clients as they already recognise each other).
+
+
+4. "icao2fgfs"
+
+This file specifies the FlightGear models to use in the tower and additional
+views to render non-FGMS aircraft. This includes all AI aircraft generated in
+solo sessions, as well as FSD and teacher traffic. It should contain header
+lines, each specifying a model for an ICAO ACFT type designator:
+ICAO_dez  FG_model_file
+
+Under each header line, you may insert a number of model specification lines
+from the list below (the first token is literal; offset values default to 0):
+ :height    value   # height of the model's origin from the wheels, in feet
+ :latoffset value   # displacement of model's origin from centre of cabin,
+                      rightward along pitch axis, in metres
+ :fwdoffset value   # displacement of model's origin from centre of cabin,
+                      forward along roll axis, in metres
+ :airline   ICAO_code  FG_livery_string   # any number of these is OK
+

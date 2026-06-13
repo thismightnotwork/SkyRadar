@@ -1,0 +1,30 @@
+
+== CONFIG/elev ==
+
+This directory contains ground elevation maps, used for more accurate rendering
+of taxiing and landing AI traffic in the viewers. There may be one file per
+location (ICAO.elev), which is loaded on session start.
+
+An elevation map file must contain a header line with the coordinates of the NW
+and SE corners of the covered zone. The lines immediately following the header
+are elevation plots in feet AMSL, distributed as equally spaced in both
+dimensions over the zone. So the more values provided, the finer the precision.
+These lines must all have the same number of values. Elevation in one point is
+then retrieved via a bilinear interpolation between the four closest values.
+
+For example:
+37.6311,-122.3965  37.6096,-122.3564
+	1.1  2.2  .22
+	.98  3.1  2.5
+
+Line comments, starting with '#', are allowed anywhere in the file.
+
+NB: If you have "fgelev" (a tool that comes with any FlightGear installation),
+you can use the provided "mkElevMap.py" script. It will generate a map in the
+"OUTPUT" directory, given corner coordinates and a precision value.
+
+When no elevation map is found for an airfield, the elevation value is used
+everywhere on the ground. This should be OK for a rough approximation on flat
+terrain, but ground traffic will not follow any slopes, thus may appear to be
+floating above the ground, or dipping into it.
+

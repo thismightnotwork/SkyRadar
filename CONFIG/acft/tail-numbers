@@ -1,0 +1,17 @@
+#  @ = random letter
+#  % = random digit
+#  * = random letter or digit
+#  other = verbatim
+
+7T-V@@   # Algeria
+B-%%@@   # China
+F-@@@@   # France
+G-@@@@   # UK
+JA%%**   # Japan
+N%%%*@   # USA
+OO-@@@   # Belgium
+SP-@@@   # Poland
+XB-@@@   # Mexico
+VT-@@@   # India
+VH-@@@   # Australia
+

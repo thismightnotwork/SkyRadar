@@ -1,0 +1,11 @@
+
+== CONFIG/loc ==
+
+Airfield- and CTR-specific settings are stored here by location code. Each file
+is loaded when a session is open at its location, and saved (written over) when
+its window is closed. All settings saved here can be changed from the ATC-pie
+interface.
+
+Delete any "XXX.conf" to restore defaults at location "XXX", but the directory
+itself should not be deleted.
+

@@ -1,0 +1,17 @@
+
+== CONFIG/ad ==
+
+This is where to place your custom airport data files, named after their
+respective ICAO codes with a ".dat" extension. They should follow the X-plane
+APT format.
+
+Source files for airports can be found on the X-plane gateway, directly
+accessible from the system menu. Extract the "apt.dat" file contained in any
+downloaded archive and place it here, renaming it to the right location code.
+
+Alternatively, you may touch up the default data for an airfield yourself, e.g.
+to update a single radio frequency or parking position label. To do this, after
+a first session has been opened at that location, look for the automatically
+generated ".extract" file of the right ICAO code in the "OUTPUT" directory. This
+file can be edited and saved here, with its extension changed to ".dat".
+

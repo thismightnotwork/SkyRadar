@@ -1,0 +1,50 @@
+
+C172	Aircraft/c172p/Models/c172p.xml
+  :height 10
+
+# acceptable substitution below
+AT43	Aircraft/ATR-72-500/Models/ATR-72-500.xml
+  :height 20
+
+A320	Aircraft/A320-family/XMLs/A320-231.xml
+  :airline BAW BAW
+
+A346	Aircraft/A340-600/Models/A340-600.xml
+  :airline ACA ACA
+  :airline SAA SAA
+
+A388	Aircraft/A380/XML/A380.xml
+  :airline SIA SIA
+
+#B744	Aircraft/747-8i/Models/747-8i.xml
+B744	Aircraft/747-400/Models/747-400.xml
+  :airline KLM KLM
+
+B737	Aircraft/737NG/Models/737-700.xml
+
+B772	Aircraft/777/Models/777-200.xml
+  :height 17
+  :airline AAL AAL
+  :airline ACA ACA
+  :airline AFR AFR
+  :airline BAW BAW
+  :airline DAL DAL
+  :airline JAL JAL
+  :airline KAL KAL
+  :airline KLM KLM
+  :airline KQA KQA
+  :airline MAS MAS
+  :airline SIA SIA
+
+B773	Aircraft/777/Models/777-300.xml
+  :airline AAL AAL
+  :airline ACA ACA
+  :airline AFR AFR
+  :airline BAW BAW
+  :airline JAL JAL
+  :airline KAL KAL
+  :airline KLM KLM
+  :airline SAA SAA
+  :airline SIA SIA
+  :airline TAM TAM
+

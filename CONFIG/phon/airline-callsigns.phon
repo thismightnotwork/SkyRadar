@@ -1,0 +1,16 @@
+# ICAO | Radio callsign | Sphinx phoneme sequence
+
+AAL  |  American    |  AH M EH R AH K AH N  # American Airlines
+ACA  |  Air Canada  |  EH R K AE N AH D AH  # Air Canada
+AFR  |  Airfrans    |  EH R F R AA N S      # Air France
+BAW  |  Speedbird   |  S P IY D B ER D      # British Airways
+DAL  |  Delta       |  D EH L T AH          # Delta Airways
+JAL  |  Japanair    |  JH AH P AE N EH R    # Japan Airlines
+KAL  |  Koreanair   |  K AH R IY AH N EH R  # Korean Air
+KLM  |  KLM         |  K EY EH L EH M       # KLM
+KQA  |  Kenya       |  K EH N Y AH          # Kenya Airways
+MAS  |  Malaysian   |  M AH L EY ZH AH N    # Malaysia Airlines
+SAA  |  Springbok   |  S P R IH NG B AA K   # South African Airways
+SIA  |  Singapore   |  S IH NG AH P AO R    # Singapore Airlines
+TAM  |  Tam         |  T AE M               # Tam
+USA  |  Cactus      |  K AE K T AH S        # US Airways

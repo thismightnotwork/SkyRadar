@@ -1,0 +1,29 @@
+
+== CONFIG/phon ==
+
+This directory contains the specification files for voice synthesis of pilot
+read-back and recognition of ATC instructions in solo sessions.
+
+Every specification line in such file must contain the three fields below in
+order, separated by a pipe character ('|', whitespace accepted):
+ - the code for the entry (ICAO airline code or navpoint short name);
+ - a text-to-speech string allowing virtual pilots to read out the entry;
+ - whitespace-separated phonemes expected by the PocketSphinx acoustic model.
+
+Line comments, starting with '#', are allowed.
+
+
+1. "airline-callsigns.phon"
+
+This file specifies the radio callsigns of airlines, for example "Speedbird" for
+British Airways. The airline codes contained are also those used to generate
+callsigns when spawning traffic in solo sessions, and to suggest them for
+teacher-created traffic.
+
+
+2. files named "navpoints-XXXX.phon"
+
+Such a file specifies the pronunciation of navpoint names used at location XXXX.
+Note that you can always refer to navpoints by spelling out their short code
+using the standard aviation alpha-numericals.
+

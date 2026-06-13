@@ -1,0 +1,74 @@
+
+== CONFIG ==
+
+This directory contains all settings and customisation files for ATC-pie. Its
+contents is listed below, with a description for each sub-directory or file.
+
+
+
+*** DIRECTORIES ***
+
+Each directory below contains a "Notice" file of its own with more information
+about its purpose and contents.
+
+ - CONFIG/acft: aircraft data base and FlightGear model conversions
+ - CONFIG/ad:   airfield source data (custom/imported "apt.dat" files)
+ - CONFIG/bg:   background images for radars and loose strip bays
+ - CONFIG/elev: ground elevation maps (for solo and teaching sessions)
+ - CONFIG/loc:  location-specific settings reloaded between sessions
+ - CONFIG/nav:  navigation and routing data
+ - CONFIG/phon: pronunciation of airline callsigns and navpoint names
+
+
+
+*** FILES ***
+
+Any of the files below can be deleted to restore defaults.
+
+
+1. "settings.conf"
+2. "text-radio-messages.conf"
+
+These files store the settings that are reloaded between sessions. The text
+radio message presets are saved separately for convenience.
+
+Both files are loaded when a location is open, and saved (written over) when its
+window is closed. You can therefore edit them between sessions, but should use
+the application interface while a session is running not to lose your changes.
+All saved settings can be changed from the application interface.
+
+
+3. "CTR-positions.conf"
+
+This file contains the radar centre positions for the CTR locations proposed in
+the launcher.
+
+It is loaded on program start-up, and saved (written over) on exit. You can
+therefore edit it between runs, but should not do so while the program is
+running not to lose your changes.
+
+
+4. "colours.conf"
+
+You may customise display colours by editing this file, generated on start-up if
+not already present. It can be edited and reloaded from the "System" menu while
+the program is running.
+
+Colours are specified with SVG colour keyword names like "white" or RGB hex
+strings of the form "RRGGBB". Line comments, starting with '#', are allowed.
+
+
+5. "main-stylesheet.qss"
+
+If present at start-up, this Qt stylesheet will be applied to the main window
+and its child dialogs. It can be edited and reloaded from the "System" menu
+while the program is running.
+
+For a specification of the Qt stylesheet syntax: doc.qt.io/qt-5/stylesheet.html
+
+
+6. "dock-layout.bin"
+
+This binary file is created by ATC-pie when saving the window and dock geometry
+from the "View" menu. It is not editable.
+
